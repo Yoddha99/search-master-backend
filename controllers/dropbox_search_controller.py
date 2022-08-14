@@ -139,8 +139,7 @@ def search():
 			# Fetch shareable links with given file paths
 			final_response = get_search_result(response)
 
-		except e:
-			print(e)
+		except:
 			return jsonify({"error": "internal server error"}), 500
 
     # Output/send response to client
