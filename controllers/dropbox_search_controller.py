@@ -134,7 +134,7 @@ def search():
 
 			# Search files in elastic search index for given query q
 			es.indices.refresh(index="dropbox_files")
-			response = es.search(index="dropbox_files", body={"query": {"match": {"content": q}}})
+			response = es.search(index="dropbox_files", body={"query": {"match_phrase": {"content": q}}})
 
 			# Fetch shareable links with given file paths
 			final_response = get_search_result(response)
